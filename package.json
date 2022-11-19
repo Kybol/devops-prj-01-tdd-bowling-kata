@@ -1,0 +1,46 @@
+{
+  "name": "devops-prj-01-tdd-bowling-kata",
+  "version": "1.0.0",
+  "description": "devops projet 01 : bowling kata (TDD)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "cz",
+    "build": "webpack ./src/app.js -o public/",
+    "prettier": "prettier -c \"src/**/*.js\"",
+    "prettier:fix": "prettier -w \"src/**/*.js\"",
+    "lint": "eslint \"src/**/*.js\"",
+    "lint:fix": "eslint --fix \"src/**/*.js\"",
+    "code:fix": "npm run prettier:fix && npm run lint:fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kybol/devops-prj-01-tdd-bowling-kata.git"
+  },
+  "keywords": [
+    "devops",
+    "bowling",
+    "kata",
+    "tdd"
+  ],
+  "author": "Blomme Kimberley - Jetti Omar - Yamamoto Guilherme",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kybol/devops-prj-01-tdd-bowling-kata/issues"
+  },
+  "homepage": "https://github.com/Kybol/devops-prj-01-tdd-bowling-kata#readme",
+  "devDependencies": {
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "8.5.0",
+    "prettier": "2.7.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
