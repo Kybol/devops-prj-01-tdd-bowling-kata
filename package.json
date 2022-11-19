@@ -8,7 +8,10 @@
     "commit": "cz",
     "build": "webpack ./src/app.js -o public/",
     "prettier": "prettier -c \"src/**/*.js\"",
-    "prettier:fix": "prettier -w \"src/**/*.js\""
+    "prettier:fix": "prettier -w \"src/**/*.js\"",
+    "lint": "eslint \"src/**/*.js\"",
+    "lint:fix": "eslint --fix \"src/**/*.js\"",
+    "code:fix": "npm run prettier:fix && npm run lint:fix"
   },
   "repository": {
     "type": "git",
@@ -29,6 +32,8 @@
   "devDependencies": {
     "commitizen": "^4.2.5",
     "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "8.5.0",
     "prettier": "2.7.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.0"
