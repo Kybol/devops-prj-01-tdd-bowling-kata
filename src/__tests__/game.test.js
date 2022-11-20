@@ -15,4 +15,9 @@ describe("game tests suites - isASpare", () => {
       expect(result).toBe(false);
     });
 
+    test("should return true because roll1 + roll2 === 10 and roll1 or roll2 != 0 ", () => {
+        const result = isASpare(4,6);
+        expect(result).toBe(true);
+      });
+
   });
