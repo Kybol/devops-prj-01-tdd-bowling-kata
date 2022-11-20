@@ -1,5 +1,5 @@
-const roll = () => {
-  return Math.floor(Math.random() * 1);
+const roll = (max) => {
+  return Math.floor(Math.random() * max);
 };
 
 const isASpare = (roll1, roll2) => {
