@@ -1,14 +1,14 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es2021": true
+    'env': {
+        'browser': true,
+        'commonjs': true,
+        'es2021': true
     },
-    "extends": ['prettier'],
-    "overrides": [
+    'extends': ['prettier'],
+    'overrides': [
     ],
-    "parserOptions": {
-        "ecmaVersion": "latest"
+    'parserOptions': {
+        'ecmaVersion': 'latest'
     },
     'rules': {
         'linebreak-style': [
