@@ -1,4 +1,5 @@
 const { roll } = require("../game");
+const { isASpare } = require("../game");
 
 describe("game tests suites - roll", () => {
   test("should return a random int between 0 and 10", () => {
@@ -7,3 +8,11 @@ describe("game tests suites - roll", () => {
   });
 });
 
+
+describe("game tests suites - isASpare", () => {
+    test("should return false because roll 1 + roll 2 != 10", () => {
+      const result = isASpare(2,1);
+      expect(result).toBe(false);
+    });
+
+  });
