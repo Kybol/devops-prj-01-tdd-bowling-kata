@@ -36,5 +36,4 @@ describe("game tests suites - isAStrike", () => {
     const result = isAStrike(10);
     expect(result).toBe(true);
   });
-
 });
