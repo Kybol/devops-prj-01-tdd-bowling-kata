@@ -62,4 +62,11 @@ describe("game tests suites - addFrameToPlayer", () => {
     const result = addFrameToPlayer("BOBO", 0, 0);
     expect(result).toBe(false);
   });
+  
+  test("should return ", () => {
+    addPlayer("Kim");
+    const result = addFrameToPlayer("Kim", 0, 0);
+    expect(result).toBe(true);
+  });
+
 });
