@@ -1,10 +1,4 @@
-let players = {
-  name: undefined,
-  frames: {
-    rolls: [],
-    score: 0,
-  },
-};
+let players = [];
 
 const roll = (max) => {
   return Math.floor(Math.random() * max);
@@ -21,8 +15,18 @@ const isAStrike = (roll1) => {
   return false;
 };
 
-const addPlayer = (nom) => {
-  return false;
+const addPlayer = (name) => {
+  if (!name) {
+    return false;
+  }
+  players.push({
+    name: name,
+    frames: {
+      rolls: [],
+      score: 0,
+    },
+  });
+  return true;
 };
 
 exports.roll = roll;
