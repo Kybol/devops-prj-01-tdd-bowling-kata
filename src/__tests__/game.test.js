@@ -2,6 +2,7 @@ const { roll } = require("../game");
 const { isASpare } = require("../game");
 const { isAStrike } = require("../game");
 const { addPlayer } = require("../game");
+const { addFrameToPlayer } = require("../game");
 
 describe("game tests suites - roll", () => {
   test("should return a random int between 0 and 10", () => {
@@ -48,5 +49,12 @@ describe("game tests suites - addPlayer", () => {
   test("should return true because player was added", () => {
     const result = addPlayer("Kim");
     expect(result).toBe(true);
+  });
+});
+
+describe("game tests suites - addFrameToPlayer", () => {
+  test("should not add frame to player", () => {
+    const result = addFrameToPlayer("Kim", 0, 0);
+    expect(result).toBe(false);
   });
 });
