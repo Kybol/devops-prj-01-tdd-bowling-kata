@@ -1,6 +1,7 @@
 const { roll } = require("../game");
 const { isASpare } = require("../game");
 const { isAStrike } = require("../game");
+const { addPlayer } = require("../game");
 
 describe("game tests suites - roll", () => {
   test("should return a random int between 0 and 10", () => {
@@ -35,5 +36,12 @@ describe("game tests suites - isAStrike", () => {
   test("should return true", () => {
     const result = isAStrike(10);
     expect(result).toBe(true);
+  });
+});
+
+describe("game tests suites - addPlayer", () => {
+  test("should return because player was not added", () => {
+    const result = addPlayer("");
+    expect(result).toBe(false);
   });
 });
