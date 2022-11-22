@@ -40,8 +40,13 @@ describe("game tests suites - isAStrike", () => {
 });
 
 describe("game tests suites - addPlayer", () => {
-  test("should return because player was not added", () => {
-    const result = addPlayer("");
+  test("should return false because player was not added", () => {
+    const result = addPlayer(null);
     expect(result).toBe(false);
+  });
+
+  test("should return true because player was added", () => {
+    const result = addPlayer("Kim");
+    expect(result).toBe(true);
   });
 });
