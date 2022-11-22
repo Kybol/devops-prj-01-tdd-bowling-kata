@@ -30,7 +30,7 @@ const addPlayer = (name) => {
 };
 
 const addFrameToPlayer = (name, roll1, roll2) => {
-  return false;
+  if (!name) return false;
 };
 
 exports.roll = roll;

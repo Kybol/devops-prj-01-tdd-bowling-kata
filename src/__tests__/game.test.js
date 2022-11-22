@@ -53,8 +53,8 @@ describe("game tests suites - addPlayer", () => {
 });
 
 describe("game tests suites - addFrameToPlayer", () => {
-  test("should not add frame to player", () => {
-    const result = addFrameToPlayer("Kim", 0, 0);
+  test("should return false beacause name is null", () => {
+    const result = addFrameToPlayer("", 0, 0);
     expect(result).toBe(false);
   });
 });
