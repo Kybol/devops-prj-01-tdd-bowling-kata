@@ -21,10 +21,7 @@ const addPlayer = (name) => {
   }
   players.push({
     name: name,
-    frames: {
-      rolls: [],
-      score: 0,
-    },
+    frames: [],
   });
   return true;
 };
@@ -33,7 +30,7 @@ const addFrameToPlayer = (name, roll1, roll2) => {
   if (!name) return false;
   const player = players.find((player) => player.name === name);
   if (!player) return false;
-  player.frames.rolls.push({ roll1: roll1, roll2: roll2 });
+  player.frames.push({ rolls: [roll1, roll2], score: 0 });
   return true;
 };
 
