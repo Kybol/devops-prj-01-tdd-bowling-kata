@@ -9,11 +9,10 @@ const isASpare = (roll1, roll2) => {
 };
 
 const isAStrike = (roll1) => {
-  if(roll1 === 10) return true;
+  if (roll1 === 10) return true;
   return false;
 };
 
 exports.roll = roll;
 exports.isASpare = isASpare;
 exports.isAStrike = isAStrike;
-
