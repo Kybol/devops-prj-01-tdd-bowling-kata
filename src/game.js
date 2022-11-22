@@ -29,8 +29,13 @@ const addPlayer = (name) => {
   return true;
 };
 
+const addFrameToPlayer = (name, roll1, roll2) => {
+  return false;
+};
+
 exports.roll = roll;
 exports.isASpare = isASpare;
 exports.isAStrike = isAStrike;
 exports.addPlayer = addPlayer;
 exports.players = players;
+exports.addFrameToPlayer = addFrameToPlayer;
