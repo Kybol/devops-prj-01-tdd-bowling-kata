@@ -57,4 +57,9 @@ describe("game tests suites - addFrameToPlayer", () => {
     const result = addFrameToPlayer("", 0, 0);
     expect(result).toBe(false);
   });
+
+  test("should return false beacause player doesn't exist", () => {
+    const result = addFrameToPlayer("BOBO", 0, 0);
+    expect(result).toBe(false);
+  });
 });
