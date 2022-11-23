@@ -31,7 +31,7 @@ const addFrameToPlayer = (name, roll1, roll2) => {
   const player = players.find((player) => player.name === name);
   if (!player) return false;
   let lastIndex = player.frames.length - 1;
-  let previousScore = lastIndex <= 0 ? 0 : player.frames?.[lastIndex].score;
+  let previousScore = lastIndex < 0 ? 0 : player.frames?.[lastIndex].score;
   player.frames.push({
     rolls: [roll1, roll2],
     score: previousScore + roll1 + roll2,
