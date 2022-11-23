@@ -30,8 +30,9 @@ const addFrameToPlayer = (name, roll1, roll2) => {
   if (!name) return false;
   const player = players.find((player) => player.name === name);
   if (!player) return false;
-  player.frames.push({ rolls: [roll1, roll2], score: 0 });
-  return true;
+  player.frames.push({ rolls: [roll1, roll2], score: roll1 + roll2 });
+  let frame = player.frames[player.frames.length - 1];
+  return frame;
 };
 
 exports.roll = roll;
