@@ -135,4 +135,16 @@ describe("game tests suites - addFrameToPlayer", () => {
     );
     expect(result.score).toBe(14);
   });
+
+  test("should return right score for 2 strike at last frame", () => {
+    addPlayer("Zim");
+    for (let i = 0; i < 9; i++) {
+      addFrameToPlayer("Zim", 0, 0);
+    }
+    let result = addFrameToPlayer("Zim", 10, 10, 5);
+    console.log(
+      JSON.stringify(players.find((player) => player.name === "Zim"))
+    );
+    expect(result.score).toBe(45);
+  });
 });
