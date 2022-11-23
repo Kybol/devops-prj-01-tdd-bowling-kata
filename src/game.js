@@ -36,6 +36,10 @@ const addFrameToPlayer = (name, roll1, roll2) => {
   if (lastIndex >= 0) {
     let previousFrame = player.frames[lastIndex];
     if (isAStrike(previousFrame.rolls[0])) {
+      if (lastIndex >= 1 && isAStrike(player.frames[lastIndex - 1].rolls[0])) {
+        player.frames[lastIndex - 1].score += roll1;
+        player.frames[lastIndex].score += roll1;
+      }
       player.frames[lastIndex].score += roll1 + roll2;
     } else if (isASpare(previousFrame.rolls[0], previousFrame.rolls[1])) {
       player.frames[lastIndex].score += roll1;
