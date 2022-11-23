@@ -58,6 +58,12 @@ const addFrameToPlayer = (name, roll1, roll2, roll3 = -1) => {
         score: roll1 + roll2 + roll3 + previousScore + roll3,
       });
       return player.frames[player.frames.length - 1];
+    } else {
+      player.frames.push({
+        rolls: [roll1, roll2, roll3],
+        score: roll1 + 2 * roll2 + 2 * roll3 + previousScore,
+      });
+      return player.frames[player.frames.length - 1];
     }
   }
 
