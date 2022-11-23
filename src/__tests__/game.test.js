@@ -106,4 +106,15 @@ describe("game tests suites - addFrameToPlayer", () => {
     expect(result.score).toBe(14);
   });
 
+  test("should return right score for strikes on frame 1,2,3", () => {
+    addPlayer("Aim");
+    let result;
+    for (let i = 0; i < 3; i++) {
+      result = addFrameToPlayer("Aim", 10, 0);
+    }
+    console.log(
+      JSON.stringify(players.find((player) => player.name === "Aim"))
+    );
+    expect(result.score).toBe(60);
+  });
 });
