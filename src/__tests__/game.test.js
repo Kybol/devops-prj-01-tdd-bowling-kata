@@ -70,10 +70,19 @@ describe("game tests suites - addFrameToPlayer", () => {
   });
 
   test("should return the frame with correct score for secund frames", () => {
-    addPlayer("Kim");
-    addFrameToPlayer("Kim", 1, 1);
+    addPlayer("Tim");
+    addFrameToPlayer("Tim", 1, 1);
     console.log(players);
-    const result = addFrameToPlayer("Kim", 1, 1);
+    const result = addFrameToPlayer("Tim", 1, 1);
     expect(result.score).toBe(4);
+  });
+
+  test("should return the correct score for the whole game (rolls = 1)", () => {
+    addPlayer("Jim");
+    let result;
+    for (let i = 0; i < 10; i++) {
+      result = addFrameToPlayer("Jim", 1, 1);
+    }
+    expect(result.score).toBe(20);
   });
 });
