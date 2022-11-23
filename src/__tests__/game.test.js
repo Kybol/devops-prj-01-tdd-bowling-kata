@@ -1,4 +1,4 @@
-const { roll } = require("../game");
+const { roll, players } = require("../game");
 const { isASpare } = require("../game");
 const { isAStrike } = require("../game");
 const { addPlayer } = require("../game");
@@ -67,5 +67,13 @@ describe("game tests suites - addFrameToPlayer", () => {
     addPlayer("Kim");
     const result = addFrameToPlayer("Kim", 1, 1);
     expect(result).toEqual({ rolls: [1, 1], score: 2 });
+  });
+
+  test("should return the frame with correct score for secund frames", () => {
+    addPlayer("Kim");
+    addFrameToPlayer("Kim", 1, 1);
+    console.log(players);
+    const result = addFrameToPlayer("Kim", 1, 1);
+    expect(result.score).toBe(4);
   });
 });
