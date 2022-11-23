@@ -112,9 +112,18 @@ describe("game tests suites - addFrameToPlayer", () => {
     for (let i = 0; i < 3; i++) {
       result = addFrameToPlayer("Aim", 10, 0);
     }
-    console.log(
-      JSON.stringify(players.find((player) => player.name === "Aim"))
-    );
     expect(result.score).toBe(60);
+  });
+
+  test("should return right score for spare at last frame", () => {
+    addPlayer("Bim");
+    for (let i = 0; i < 9; i++) {
+      addFrameToPlayer("Bim", 0, 0);
+    }
+    let result = addFrameToPlayer("Bim", 9, 1, 1);
+    console.log(
+      JSON.stringify(players.find((player) => player.name === "Bim"))
+    );
+    expect(result.score).toBe(12);
   });
 });
