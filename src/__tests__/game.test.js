@@ -97,4 +97,13 @@ describe("game tests suites - addFrameToPlayer", () => {
     result = addFrameToPlayer("Pim", 1, 1);
     expect(result.score).toBe(13);
   });
+
+  test("should return right score on strike on frame 1 for frame 2", () => {
+    addPlayer("Lim");
+    let result;
+    addFrameToPlayer("Lim", 10, 0);
+    result = addFrameToPlayer("Lim", 1, 1);
+    expect(result.score).toBe(14);
+  });
+
 });
