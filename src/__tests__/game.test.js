@@ -4,6 +4,11 @@ const { isAStrike } = require("../game");
 const { addPlayer } = require("../game");
 const { addFrameToPlayer } = require("../game");
 
+beforeEach(() => {
+  // Clears the database and adds some testing data.
+  // Jest will wait for this promise to resolve before running tests.
+});
+
 describe("game tests suites - roll", () => {
   test("should return a random int between 0 and 10", () => {
     const result = roll(11);
@@ -72,7 +77,6 @@ describe("game tests suites - addFrameToPlayer", () => {
   test("should return the frame with correct score for secund frames", () => {
     addPlayer("Tim");
     addFrameToPlayer("Tim", 1, 1);
-    console.log(players);
     const result = addFrameToPlayer("Tim", 1, 1);
     expect(result.score).toBe(4);
   });
@@ -101,4 +105,5 @@ describe("game tests suites - addFrameToPlayer", () => {
     result = addFrameToPlayer("Lim", 1, 1);
     expect(result.score).toBe(14);
   });
+
 });
