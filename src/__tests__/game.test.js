@@ -62,11 +62,10 @@ describe("game tests suites - addFrameToPlayer", () => {
     const result = addFrameToPlayer("BOBO", 0, 0);
     expect(result).toBe(false);
   });
-  
-  test("should return ", () => {
-    addPlayer("Kim");
-    const result = addFrameToPlayer("Kim", 0, 0);
-    expect(result).toBe(true);
-  });
 
+  test("should return the frame with the rolls and the score (rolls:[1,1],score:2)", () => {
+    addPlayer("Kim");
+    const result = addFrameToPlayer("Kim", 1, 1);
+    expect(result).toEqual({ rolls: [1, 1], score: 2 });
+  });
 });
