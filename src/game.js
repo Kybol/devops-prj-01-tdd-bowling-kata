@@ -26,13 +26,13 @@ const addPlayer = (name) => {
   return true;
 };
 
-const addFrameToPlayer = (name, roll1, roll2) => {
+const addFrameToPlayer = (name, roll1, roll2, roll3 = -1) => {
   if (!name) return false;
   const player = players.find((player) => player.name === name);
   if (!player) return false;
   let lastIndex = player.frames.length - 1;
 
-  //update score with bonuses
+  //update previous score with bonuses
   if (lastIndex >= 0) {
     let previousFrame = player.frames[lastIndex];
     if (isAStrike(previousFrame.rolls[0])) {
@@ -46,8 +46,20 @@ const addFrameToPlayer = (name, roll1, roll2) => {
     }
   }
 
+  // if is last frame
+
   //get previous score
   let previousScore = lastIndex < 0 ? 0 : player.frames?.[lastIndex].score;
+
+  if (roll3 != -1) {
+    if (isASpare(roll1, roll2)) {
+      player.frames.push({
+        rolls: [roll1, roll2, roll3],
+        score: roll1 + roll2 + roll3 + previousScore + roll3,
+      });
+      return player.frames[player.frames.length - 1];
+    }
+  }
 
   player.frames.push({
     rolls: [roll1, roll2],
