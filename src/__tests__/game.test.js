@@ -121,7 +121,7 @@ describe("game tests suites - addFrameToPlayer", () => {
       addFrameToPlayer("Bim", 0, 0);
     }
     let result = addFrameToPlayer("Bim", 9, 1, 1);
-    expect(result.score).toBe(12);
+    expect(result.score).toBe(11);
   });
 
   test("should return right score for strike at last frame", () => {
@@ -133,7 +133,7 @@ describe("game tests suites - addFrameToPlayer", () => {
     console.log(
       JSON.stringify(players.find((player) => player.name === "Vim"))
     );
-    expect(result.score).toBe(14);
+    expect(result.score).toBe(12);
   });
 
   test("should return right score for 2 strike at last frame", () => {
@@ -145,6 +145,18 @@ describe("game tests suites - addFrameToPlayer", () => {
     console.log(
       JSON.stringify(players.find((player) => player.name === "Zim"))
     );
-    expect(result.score).toBe(45);
+    expect(result.score).toBe(25);
+  });
+
+  test("should return right score for perfect game", () => {
+    addPlayer("Gim");
+    for (let i = 0; i < 9; i++) {
+      addFrameToPlayer("Gim", 10);
+    }
+    let result = addFrameToPlayer("Gim", 10, 10, 10);
+    console.log(
+      JSON.stringify(players.find((player) => player.name === "Gim"))
+    );
+    expect(result.score).toBe(300);
   });
 });

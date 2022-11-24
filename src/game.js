@@ -26,7 +26,7 @@ const addPlayer = (name) => {
   return true;
 };
 
-const addFrameToPlayer = (name, roll1, roll2, roll3 = -1) => {
+const addFrameToPlayer = (name, roll1, roll2 = 0, roll3 = -1) => {
   if (!name) return false;
   const player = players.find((player) => player.name === name);
   if (!player) return false;
@@ -51,26 +51,11 @@ const addFrameToPlayer = (name, roll1, roll2, roll3 = -1) => {
 
   // if is last frame
   if (roll3 != -1) {
-    if (isASpare(roll1, roll2)) {
-      player.frames.push({
-        rolls: [roll1, roll2, roll3],
-        score: roll1 + roll2 + 2 * roll3 + previousScore,
-      });
-      return player.frames[player.frames.length - 1];
-    } else {
-      if (isAStrike(roll2)) {
-        player.frames.push({
-          rolls: [roll1, roll2, roll3],
-          score: roll1 + 2 * roll2 + 3 * roll3 + previousScore,
-        });
-      } else {
-        player.frames.push({
-          rolls: [roll1, roll2, roll3],
-          score: roll1 + 2 * roll2 + 2 * roll3 + previousScore,
-        });
-      }
-      return player.frames[player.frames.length - 1];
-    }
+    player.frames.push({
+      rolls: [roll1, roll2, roll3],
+      score: roll1 + roll2 + roll3 + previousScore,
+    });
+    return player.frames[player.frames.length - 1];
   }
 
   player.frames.push({
